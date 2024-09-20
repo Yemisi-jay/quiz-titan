@@ -1,1 +1,1 @@
-web: gunicorn trivia_project.wsgi --log-file -
+gunicorn trivia_project.wsgi --log-file -
