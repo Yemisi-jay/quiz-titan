@@ -18,7 +18,6 @@ from decouple import config, Csv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -29,7 +28,6 @@ SECRET_KEY = 'django-insecure-&n&5h_*c$0v9*%gd%p&&#qm#6$cqu#9__f+@f-&l37*1$dgtcx
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['quiz-titan-f3qb.onrender.com', 'localhost', '127.0.0.1']
-
 
 # Application definition
 
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'trivia_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -91,8 +88,7 @@ WSGI_APPLICATION = 'trivia_project.wsgi.application'
 #     DATABASES['default'] = dj_database_url.config(default=DATABASE_URL)
 
 if os.environ.get('ENV') == 'PRODUCTION':
-    DATABASES = {'default':
-                 dj_database_url.config(default='postgres://localhost/mydb')
+    DATABASES = {'default': dj_database_url.config(CONN_MAX_AGE=600, ssl_require=True)
                  }
 else:
     DATABASES = {
@@ -120,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -131,7 +126,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -145,7 +139,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
