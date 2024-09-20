@@ -26,8 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&n&5h_*c$0v9*%gd%p&&#qm#6$cqu#9__f+@f-&l37*1$dgtcx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['quiz-titan-f3qb.onrender.com', 'localhost', '127.0.0.1']
 
