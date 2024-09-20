@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-&n&5h_*c$0v9*%gd%p&&#qm#6$cqu#9__f+@f-&l37*1$dgtcx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = ['https://quiz-titan-f3qb.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
